@@ -35,14 +35,18 @@ public class HandlingStreams {
 
 		List<Integer> integers = IntStream.range(10, 20).boxed().collect(Collectors.toList());
 		System.out.println(ArrayUtils.toString(integers.toArray()));
-		
-		
+
 		List<Integer> list = integers.stream().filter(num -> num > 12).skip(2).collect(Collectors.toList());
 		System.out.println(ArrayUtils.toString(list.toArray()));
-		
+
 		Map<Integer, Integer> nummap = list.parallelStream().sorted().collect(Collectors.toMap(num -> num, num -> num));
 		System.out.println(nummap.toString());
-		
+
+		integers = integers.parallelStream().map(i -> convert(i)).filter(i -> i != null).collect(Collectors.toList());
+		System.out.println(ArrayUtils.toString(integers.toArray()));
 	}
 
+	public static Integer convert(Integer i) {
+		return null;
+	}
 }

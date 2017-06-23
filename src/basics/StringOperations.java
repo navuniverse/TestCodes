@@ -16,11 +16,15 @@ public class StringOperations {
 	public static void main(String[] args) {
 
 		stringCocatenation();
+		stringCocatenation("naveen");
 	}
 
 	private static void stringCocatenation() {
 		String testString = null;
+		System.out.println(ObjectUtils.defaultIfNull(testString, StringUtils.EMPTY).concat("hello"));
+	}
 
+	private static void stringCocatenation(String testString) {
 		System.out.println(ObjectUtils.defaultIfNull(testString, StringUtils.EMPTY).concat("\nhello"));
 	}
 }

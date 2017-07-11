@@ -3,8 +3,10 @@
  */
 package basics;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.TimeZone;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
@@ -18,9 +20,21 @@ public class DateOperations {
 
 	public static void main(String[] args) {
 
+		timezoneOperations();
+
 		dateOperations();
 
 		calendarOperations();
+	}
+
+	private static void timezoneOperations() {
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+		Date date = new Date();
+		System.out.println(sdf.format(date));
+
 	}
 
 	private static void dateOperations() {

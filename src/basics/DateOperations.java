@@ -3,6 +3,7 @@
  */
 package basics;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
@@ -18,7 +19,7 @@ import org.joda.time.DateTimeZone;
  */
 public class DateOperations {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 
 		timezoneOperations();
 
@@ -27,13 +28,18 @@ public class DateOperations {
 		calendarOperations();
 	}
 
-	private static void timezoneOperations() {
+	private static void timezoneOperations() throws ParseException {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-
 		Date date = new Date();
-		System.out.println(sdf.format(date));
+		String stringdate = sdf.format(date);
+		System.out.println(stringdate);
+
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+		date = dateFormat.parse(stringdate);
+
+		System.out.println(date);
 
 	}
 

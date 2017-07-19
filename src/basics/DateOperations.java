@@ -19,13 +19,36 @@ import org.joda.time.DateTimeZone;
  */
 public class DateOperations {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws Exception {
 
 		timezoneOperations();
 
 		dateOperations();
 
 		calendarOperations();
+		
+		localDateOperations();
+	}
+
+	private static void localDateOperations() throws InterruptedException {
+		Date date = new Date(DateTime.now(DateTimeZone.forID("Asia/Kolkata")).getMillis());
+
+		System.out.println(date);
+
+		org.joda.time.LocalDate localDate = org.joda.time.LocalDate.fromDateFields(date);
+
+		System.out.println("LocalDate1: " + localDate);
+
+		Thread.sleep(100);
+		Date date2 = new Date(DateTime.now(DateTimeZone.forID("Asia/Kolkata")).getMillis());
+
+		System.out.println(date2);
+
+		org.joda.time.LocalDate localDate2 = org.joda.time.LocalDate.fromDateFields(date);
+
+		System.out.println("LocalDate2: " + localDate2);
+
+		System.out.println(localDate.equals(localDate2));
 	}
 
 	private static void timezoneOperations() throws ParseException {

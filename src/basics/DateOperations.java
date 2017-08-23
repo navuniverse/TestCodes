@@ -26,7 +26,7 @@ public class DateOperations {
 		dateOperations();
 
 		calendarOperations();
-		
+
 		localDateOperations();
 	}
 
@@ -53,12 +53,13 @@ public class DateOperations {
 
 	private static void timezoneOperations() throws ParseException {
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+		sdf.setTimeZone(TimeZone.getTimeZone("Asia/Kolkata"));
 		Date date = new Date();
 		String stringdate = sdf.format(date);
 		System.out.println(stringdate);
 
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 		dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
 		date = dateFormat.parse(stringdate);
 

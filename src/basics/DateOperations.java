@@ -28,6 +28,8 @@ public class DateOperations {
 		calendarOperations();
 
 		localDateOperations();
+
+		dateFormatterOps();
 	}
 
 	private static void localDateOperations() throws InterruptedException {
@@ -84,5 +86,16 @@ public class DateOperations {
 
 		LocalDate localDate = LocalDate.of(Integer.valueOf(year), Integer.valueOf(month), Integer.valueOf(day));
 		System.out.println(localDate.getDayOfWeek());
+	}
+
+	private static void dateFormatterOps() throws ParseException {
+		SimpleDateFormat minuteDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
+		minuteDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Kolkata"));
+
+		Date lastFetchTime = minuteDateFormat.parse("2017-08-26T12:45:04Z");
+		System.out.println("Original: " + lastFetchTime);
+
+		System.out.println(minuteDateFormat.format(DateTime.now().toDate()));
+
 	}
 }

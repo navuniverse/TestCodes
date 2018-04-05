@@ -11,6 +11,7 @@ import java.util.TimeZone;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
+import org.joda.time.Days;
 
 /**
  * @author naveen
@@ -21,15 +22,31 @@ public class DateOperations {
 
 	public static void main(String[] args) throws Exception {
 
-		timezoneOperations();
+		localDateParsing();
 
-		dateOperations();
+//		timezoneOperations();
+//
+//		dateOperations();
+//
+//		calendarOperations();
+//
+//		localDateOperations();
+//
+//		dateFormatterOps();
+	}
 
-		calendarOperations();
+	private static void localDateParsing() throws InterruptedException {
+		org.joda.time.LocalDate localDate = org.joda.time.LocalDate.parse("2018-04-02");
 
-		localDateOperations();
+		System.out.println(localDate);
 
-		dateFormatterOps();
+		System.out.println("LocalDate Compare: " + org.joda.time.LocalDate.now().isBefore(localDate));
+
+		
+		org.joda.time.LocalDate localDate2 = org.joda.time.LocalDate.now();
+		
+		
+		System.out.println(Days.daysBetween(localDate, localDate2).getDays());
 	}
 
 	private static void localDateOperations() throws InterruptedException {

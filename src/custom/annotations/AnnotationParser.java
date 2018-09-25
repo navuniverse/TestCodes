@@ -62,13 +62,13 @@ public class AnnotationParser {
 						System.out.println("\nInformation about Method:\nExecuting method " + method.getName());
 						method.invoke(obj.newInstance());
 					} catch (IllegalArgumentException e) {
-						System.out.println(String.format("Error while invoking method %s. Error trace is: %s", method.getName(), e));
+						System.err.println(String.format("Error while invoking method %s. Error trace is: %s", method.getName(), e));
 					} catch (IllegalAccessException e) {
-						System.out.println(String.format("Error while invoking method %s. Error trace is: %s", method.getName(), e));
+						System.err.println(String.format("Error while invoking method %s. Error trace is: %s", method.getName(), e));
 					} catch (InvocationTargetException e) {
-						System.out.println(String.format("Error while invoking method %s. Error trace is: %s", method.getName(), e));
+						System.err.println(String.format("Error while invoking method %s. Error trace is: %s", method.getName(), e));
 					} catch (InstantiationException e) {
-						System.out.println(String.format("Error while invoking method %s. Error trace is: %s", method.getName(), e));
+						System.err.println(String.format("Error while invoking method %s. Error trace is: %s", method.getName(), e));
 					}
 				}
 			}

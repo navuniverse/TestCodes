@@ -22,17 +22,28 @@ public class DateOperations {
 
 	public static void main(String[] args) throws Exception {
 
-		localDateParsing();
+		localDateToDate();
 
-//		timezoneOperations();
-//
-//		dateOperations();
-//
-//		calendarOperations();
-//
-//		localDateOperations();
-//
-//		dateFormatterOps();
+		// localDateParsing();
+
+		// timezoneOperations();
+		//
+		// dateOperations();
+		//
+		// calendarOperations();
+		//
+		// localDateOperations();
+		//
+		// dateFormatterOps();
+	}
+
+	private static void localDateToDate() throws InterruptedException {
+		org.joda.time.LocalDate localDate = org.joda.time.LocalDate.parse("2018-04-02");
+
+		System.out.println(localDate);
+
+		System.out.println("LocalDate: " + localDate.toDate());
+
 	}
 
 	private static void localDateParsing() throws InterruptedException {
@@ -42,10 +53,8 @@ public class DateOperations {
 
 		System.out.println("LocalDate Compare: " + org.joda.time.LocalDate.now().isBefore(localDate));
 
-		
 		org.joda.time.LocalDate localDate2 = org.joda.time.LocalDate.now();
-		
-		
+
 		System.out.println(Days.daysBetween(localDate, localDate2).getDays());
 	}
 

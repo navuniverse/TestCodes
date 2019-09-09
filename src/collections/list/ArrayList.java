@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ArrayList {
 
-    private static List<Object> list = new java.util.ArrayList<Object>();
+    private static List<Object> list = new java.util.ArrayList<>();
 
     /**
      * Method to add a new value in the ArrayList

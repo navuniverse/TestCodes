@@ -24,17 +24,17 @@ public class DateOperations {
 
 		localDateToDate();
 
-		// localDateParsing();
+		localDateParsing();
 
-		// timezoneOperations();
-		//
-		// dateOperations();
-		//
-		// calendarOperations();
-		//
-		// localDateOperations();
-		//
-		// dateFormatterOps();
+		timezoneOperations();
+
+		dateOperations();
+
+		calendarOperations();
+
+		localDateOperations();
+
+		dateFormatterOps();
 	}
 
 	private static void localDateToDate() throws InterruptedException {

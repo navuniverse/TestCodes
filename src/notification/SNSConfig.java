@@ -37,7 +37,7 @@ public class SNSConfig {
 		String message = "Hey There";
 		String phoneNumber = "YourPhoneNumber";
 
-		Map<String, MessageAttributeValue> smsAttributes = new HashMap<String, MessageAttributeValue>();
+		Map<String, MessageAttributeValue> smsAttributes = new HashMap<>();
 		smsAttributes.put("AWS.SNS.SMS.SenderID", new MessageAttributeValue().withStringValue("TEST").withDataType("String"));
 		smsAttributes.put("AWS.SNS.SMS.SMSType", new MessageAttributeValue().withStringValue("Transactional").withDataType("String"));
 
